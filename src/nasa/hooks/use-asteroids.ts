@@ -1,22 +1,33 @@
 import { useEffect, useState } from 'react';
-
 import { fetchAsteroids } from '../api/asteroids-api';
 import type { IAsteroid } from '../interface/asteroid';
 
-export function useAsteroids(date: string) {
+export function useAsteroids(startDate: string, endDate: string) {
   const [asteroids, setAsteroids] = useState<IAsteroid[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    if (!startDate || !endDate) return;
+
     async function load() {
-      setLoading(true);
-      const data = await fetchAsteroids(date);
-      setAsteroids(data);
-      setLoading(false);
+      try {
+        setLoading(true);
+        setError(null);
+        const data = await fetchAsteroids(startDate, endDate);
+        setAsteroids(data as IAsteroid[]);
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError('Error desconocido');
+        }
+      } finally {
+        setLoading(false);
+      }
     }
-
     load();
-  }, [date]);
+  }, [startDate, endDate]);
 
-  return { asteroids, loading };
+  return { asteroids, loading, error };
 }
