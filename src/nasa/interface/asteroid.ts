@@ -8,6 +8,7 @@ export interface IAsteroid {
     };
   };
   close_approach_data: {
+    close_approach_date: Date;
     relative_velocity: {
       kilometers_per_hour: string;
     };

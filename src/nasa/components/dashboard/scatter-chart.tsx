@@ -33,7 +33,10 @@ export function ScatterChart({ asteroids }: { asteroids: IAsteroid[] }) {
             callbacks: {
               label: (ctx) => {
                 const a = asteroids[ctx.dataIndex];
+                const date = a.close_approach_data[0]?.close_approach_date ?? 'N/A';
+
                 return [
+                  `Fecha: ${date}`,
                   `Nombre: ${a.name}`,
                   `Velocidad: ${Math.round(ctx.parsed.y as number).toLocaleString()} km/h`,
                   `Distancia: ${Math.round(ctx.parsed.x as number).toLocaleString()} km`,

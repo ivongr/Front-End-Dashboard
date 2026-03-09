@@ -39,7 +39,10 @@ export function BarChart({ asteroids }: { asteroids: IAsteroid[] }) {
             callbacks: {
               label: (ctx) => {
                 const a = asteroids[ctx.dataIndex];
+                const date = a.close_approach_data[0]?.close_approach_date ?? 'N/A';
+
                 return [
+                  `Fecha: ${date}`,
                   `Diámetro: ${(ctx.raw as number).toFixed(4)} km`,
                   `Peligroso: ${a.is_potentially_hazardous_asteroid ? 'Sí' : 'No'}`,
                 ];
