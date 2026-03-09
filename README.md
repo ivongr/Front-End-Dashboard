@@ -1,73 +1,41 @@
-# React + TypeScript + Vite
+Demo desmostrativo 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Dashboard de asteroides de la NASA
 
-Currently, two official plugins are available:
+## Tecnologías ocupadas
+React
+TypeScript
+Tailwind CSS
+Chart.js
+API pública de NASA NeoWs
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Dashboard interactivo para visualizar datos de asteroides cercanos a la Tierra, construido con la API pública de NASA NeoWs.
 
-## React Compiler
+## Vista previa
+Se buscó crear un diseño responsivo, adaptado desde computadoras hasta dispositivos móviles, para mejorar la experiencia de los usuarios. 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Además, se implementaron filtros por rango de fechas, validando los datos para evitar errores en la API y prevenir que la experiencia de los usuarios se vea afectada.
 
-## Expanding the ESLint configuration
+<img width="1470" height="800" alt="image" src="https://github.com/user-attachments/assets/56d11a27-d712-4db9-b9c1-d10cb178e2a1" />
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+<img width="1470" height="784" alt="image" src="https://github.com/user-attachments/assets/0cb529d3-eaa7-412a-acb1-431e94dbbac9" />
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+<img width="794" height="799" alt="image" src="https://github.com/user-attachments/assets/da25c09d-c585-4cd6-8a05-d6f1312f2f23" />
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+<img width="794" height="799" alt="image" src="https://github.com/user-attachments/assets/52f16d83-92fb-46b2-baa9-dbd0a3fd44fc" />
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+<img width="1344" height="799" alt="image" src="https://github.com/user-attachments/assets/188683a7-d761-49ef-a74c-18a8c22f3000" />
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+<img width="833" height="799" alt="image" src="https://github.com/user-attachments/assets/06db61eb-3d9d-43b0-97b6-c262995a214e" />
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+## Ejecutacion del proyecto
+
+Instalar dependencias : npm install
+Desplegar el proyecto : npm run dev
+
+El front se ejecutara desde http://localhost:5173
+
+
+
