@@ -1,4 +1,4 @@
-const API_KEY = import.meta.env.VITE_NASA_API_KEY;
+const API_KEY = import.meta.env.VITE_NASA_API_KEY ?? 'DEMO_KEY';
 
 export async function fetchAsteroids(startDate: string, endDate: string) {
   const start = new Date(startDate);
